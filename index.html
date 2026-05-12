@@ -23,6 +23,11 @@ body {
     text-align: center;
 }
 
+h1 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
 input {
     width: 100%;
     padding: 15px;
@@ -54,7 +59,7 @@ button:hover {
 <div class="container">
     <h1>Search the Web</h1>
 
-    <input id="query" type="text" placeholder="Type something..." 
+    <input id="query" type="text" placeholder="Type your search..." 
            onkeydown="if(event.key==='Enter'){search()}">
 
     <br>
@@ -67,8 +72,9 @@ function search() {
     let q = document.getElementById("query").value;
     if (!q) return;
 
+    // Redirect to Google search (NOT embedded)
     window.location.href =
-        "https://duckduckgo.com/?q=" + encodeURIComponent(q);
+        "https://www.google.com/search?q=" + encodeURIComponent(q);
 }
 </script>
 
