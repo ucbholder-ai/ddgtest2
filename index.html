@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #4a90e2;
+    color: white;
+}
+
+button:hover {
+    background: #357ab8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Search the Web</h1>
+
+    <input id="query" type="text" placeholder="Type something..." 
+           onkeydown="if(event.key==='Enter'){search()}">
+
+    <br>
+
+    <button onclick="search()">Search</button>
+</div>
+
+<script>
+function search() {
+    let q = document.getElementById("query").value;
+    if (!q) return;
+
+    window.location.href =
+        "https://duckduckgo.com/?q=" + encodeURIComponent(q);
+}
+</script>
+
+</body>
+</html>
